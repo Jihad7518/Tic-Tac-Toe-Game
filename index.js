@@ -17,3 +17,20 @@ const winningPositions = [
     [0,4,8],
     [2,4,6]
 ];
+
+// this function is for initialize the game
+function initGame() {
+    currentPlayer = "X";
+    gameGrid = ["","","","","","","","",""];
+    //UI needs to be empty
+    boxes.forEach((box, index) => {
+        box.innerText = "";
+        boxes[index].style.pointerEvents = "all";
+        //one more thing is missing, initialise box with css properties again
+        box.classList = `box box${index+1}`;
+    });
+    newGameBtn.classList.remove("active");
+    gameInfo.innerText = `Current Player - ${currentPlayer}`;
+}
+
+initGame();
