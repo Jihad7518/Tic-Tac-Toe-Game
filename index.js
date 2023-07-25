@@ -60,8 +60,7 @@ function checkGameOver() {
                 else {
                     answer = "O";
                 } 
-
-                 
+                    
 
                 //disable pointer events
                 boxes.forEach((box) => {
@@ -81,7 +80,7 @@ function checkGameOver() {
         newGameBtn.classList.add("active");
         return;
     }
-    
+
     // if this works means we dont have any winner
     //so check for tie
     let fillCount = 0;
@@ -98,7 +97,6 @@ function checkGameOver() {
     }
 }
 
-
 function handleClick(index) {
     if(gameGrid[index] === "" ) {
         boxes[index].innerText = currentPlayer;
@@ -113,7 +111,6 @@ function handleClick(index) {
     }
 }
 
-
 boxes.forEach((box, index) => {
     box.addEventListener("click", () => {
         handleClick(index);
@@ -121,4 +118,4 @@ boxes.forEach((box, index) => {
 });
 
 newGameBtn.addEventListener("click", initGame);
-        
+
