@@ -113,4 +113,12 @@ function handleClick(index) {
     }
 }
 
+
+boxes.forEach((box, index) => {
+    box.addEventListener("click", () => {
+        handleClick(index);
+    })
+});
+
+newGameBtn.addEventListener("click", initGame);
         
