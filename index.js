@@ -60,4 +60,26 @@ function checkGameOver() {
                 else {
                     answer = "O";
                 } 
+
+                 
+
+                //disable pointer events
+                boxes.forEach((box) => {
+                    box.style.pointerEvents = "none";
+                })
+
+                //now we know X/O is a winner
+                boxes[position[0]].classList.add("win");
+                boxes[position[1]].classList.add("win");
+                boxes[position[2]].classList.add("win");
+            }
+    });
+
+    //if this line come excecute then it means we have a winner
+    if(answer != ""){
+        gameInfo.innerText = `Winner Player - ${answer}`;
+        newGameBtn.classList.add("active");
+        return;
+    }
+
         
