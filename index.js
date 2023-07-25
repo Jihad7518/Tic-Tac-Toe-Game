@@ -99,4 +99,18 @@ function checkGameOver() {
 }
 
 
+function handleClick(index) {
+    if(gameGrid[index] === "" ) {
+        boxes[index].innerText = currentPlayer;
+        gameGrid[index] = currentPlayer;
+        boxes[index].style.pointerEvents = "none";
+
+        //now needs to swap the turn
+        swapTurn();
+
+        //now check fo any winner
+        checkGameOver();
+    }
+}
+
         
