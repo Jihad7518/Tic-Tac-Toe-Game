@@ -81,5 +81,22 @@ function checkGameOver() {
         newGameBtn.classList.add("active");
         return;
     }
+    
+    // if this works means we dont have any winner
+    //so check for tie
+    let fillCount = 0;
+    gameGrid.forEach((box) => {
+        if(box != ""){
+            fillCount++;
+        }
+    });
+
+    // this line comes, so board is fill so its tie
+    if(fillCount === 9){
+        gameInfo.innerText = "Game Tied !";
+        newGameBtn.classList.add("active");
+    }
+}
+
 
         
